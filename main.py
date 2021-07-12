@@ -4,7 +4,9 @@ from service.image_encdec import Imgencdec
 import sys
 import os
 from time import sleep
+import warnings
 
+warnings.filterwarnings("ignore")
 
 def menu():
     print("enter password")
@@ -15,10 +17,11 @@ def menu():
         print("--------enter option number--------")
         print("1)encrypt and store data")
         print("2)decrypt and retrieve data")
+        print("any other key to exit")
         option = int(input("     :"))
 
         if (option == 1):
-            file_name = input("enter new generated photo name without extension")
+            file_name = input("enter new generated photo name without extension : ")
             file_name += '.png'
             os.system('cls')
             print("------- continue typing and press enter twice to exit -------")
@@ -38,7 +41,7 @@ def menu():
             os.system('cls')
 
         elif (option == 2):
-            file_name = input("enter new generated photo name without extension")
+            file_name = input("enter new generated photo name without extension : ")
             file_name += '.png'
             os.system('cls')
             print("------available data------")
@@ -53,5 +56,3 @@ def menu():
 
 if __name__ == '__main__':
     menu()
-
-'''ctrl+d, ctrl+z'''
